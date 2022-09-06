@@ -43,18 +43,16 @@ _G.AutoJelly = false
 
 -- functions
 
-function AutoBlood()
-        while _G.AutoBlood == true do
-        if _G.AutoBlood == true then 
-        if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health< 100 then
-        game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bloodfruit") -- fruit
-         end
-          task.wait()
-       end
+function AutoPickUp()
+    local Player = game:GetService("Players").LocalPlayer
+    for _, v in pairs(workspace:GetChildren()) do
+        if v.Name == "Bloodfruit Bush" and (Player.Character.Head.Position - v.PrimaryPart.Position).magnitude < 50 then
+            game.ReplicatedStorage.Events.Pickup:FireServer(v)
+        end
     end
 end
 
-function AutoPlant()
+function AutoPickUp()
     local Player = game:GetService("Players").LocalPlayer
     for _, v in pairs(workspace.Deployables:GetChildren()) do
         if v.Name == "Plant Box" and (Player.Character.Head.Position - v.PrimaryPart.Position).magnitude < 500 then
@@ -63,12 +61,14 @@ function AutoPlant()
     end
 end
 
-function AutoPickup()
-local Player = game:GetService("Players").LocalPlayer
-	 for _, v in pairs(workspace:GetChildren()) do
-             if v.Name == "Bloodfruit Bush" and (Player.Character.Head.Position - v.PrimaryPart.Position).magnitude < 50 then
-            game.ReplicatedStorage.Events.Pickup:FireServer(v)
-        end
+function AutoBlood()
+        while _G.AutoBlood == true do
+        if _G.AutoBlood == true then 
+        if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health< 100 then
+        game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bloodfruit") -- fruit
+         end
+          task.wait()
+       end
     end
 end
 
@@ -514,16 +514,29 @@ Visuals:AddSlider({
 	end    
 })
 
-KeyBinds:AddBind({
+Visuals:AddSlider({
+	Name = "FogEnd",
+	Min = 100,
+	Max = 4500,
+	Default = 2000,
+	Color = Color3.fromRGB(60, 234, 176),
+	Increment = 100,
+	ValueName = "FogEnd",
+	Callback = function(Value)
+		game.Lighting.FogEnd  = Value
+	end    
+})
+
+Misc:AddBind({
 	Name = "Auto - Pickup",
 	Default = Enum.KeyCode.E,
 	Hold = false,
 	Callback = function()
-		AutoPickup()
+		AutoPickUp()
 	end    
 })
 
-KeyBinds:AddBind({
+Misc:AddBind({
 	Name = "Auto - Plant",
 	Default = Enum.KeyCode.E,
 	Hold = false,
