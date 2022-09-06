@@ -491,7 +491,7 @@ Visuals:AddSlider({
 })
 
 local Credits1 = Credits:AddSection({
-	Name = "Made By Evolve#002"
+	Name = "Made By Evolve#0002"
 })
 
 local Credits2 = Credits:AddSection({
