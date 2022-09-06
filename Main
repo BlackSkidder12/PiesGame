@@ -21,14 +21,14 @@ local Visuals = Window:MakeTab({
 	PremiumOnly = false
 })
 
-local Credits = Window:MakeTab({
-	Name = "Credits",
+local Misc = Window:MakeTab({
+	Name = "Keybinds",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-local Misc = Window:MakeTab({
-	Name = "Keybinds",
+local Credits = Window:MakeTab({
+	Name = "Credits",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -594,17 +594,26 @@ local Credits2 = Credits:AddSection({
 	Name = "Made By menacing#0001"
 })
 
-local Keybinds = Credits:AddSection({
-	Name = "Keybinds: "
+local Credits2 = Credits:AddSection({
+	Name = "Made By ReaperZ#0001"
 })
 
-local Keybinds1 = Credits:AddSection({
-	Name = "[ - Plant"
+local Credits2 = Credits:AddSection({
+	Name = "Helpers: "
 })
 
-local Keybinds1 = Credits:AddSection({
-	Name = "] - Collect"
+local Credits2 = Credits:AddSection({
+	Name = "1. Baci "
 })
+
+local Credits2 = Credits:AddSection({
+	Name = "2. Ogson "
+})
+
+local Credits2 = Credits:AddSection({
+	Name = "3. Plots "
+})
+
 
 local Keybinds1 = Credits:AddSection({
 	Name = "Right Shift - Open ui"
