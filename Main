@@ -27,6 +27,12 @@ local Credits = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local Misc = Window:MakeTab({
+	Name = "Keybinds",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 -- global variables
 
 _G.AutoBlood = false
