@@ -52,6 +52,31 @@ function AutoPickUp()
     end
 end
 
+function KeyBindBloodfruit()
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bloodfruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bloodfruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bloodfruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bloodfruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bloodfruit")
+end
+
+function KeyBindBerries()
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Berry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Berry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Berry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Berry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Berry")
+end
+
+function KeyBindBluefruit()
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bluefruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bluefruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bluefruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bluefruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bluefruit")
+end
+
+
 function AutoPlant()
     local Player = game:GetService("Players").LocalPlayer
     for _, v in pairs(workspace.Deployables:GetChildren()) do
@@ -531,6 +556,35 @@ Misc:AddBind({
 		AutoPlant()
 	end    
 })
+
+Misc:AddBind({
+	Name = "Autoheal - Bloodfruit",
+	Default = Enum.KeyCode.Q,
+	Hold = true,
+	Callback = function()
+		KeyBindBloodfruit()
+	end    
+})
+
+Misc:AddBind({
+	Name = "Autoheal - Berries",
+	Default = Enum.KeyCode.H,
+	Hold = true,
+	Callback = function()
+		KeyBindBerries()
+	end    
+})
+
+
+Misc:AddBind({
+	Name = "Autoheal - Bluefruit",
+	Default = Enum.KeyCode.O,
+	Hold = true,
+	Callback = function()
+		KeyBindBluefruit()
+	end    
+})
+
 
 local Credits1 = Credits:AddSection({
 	Name = "Made By Evolve#0002"
