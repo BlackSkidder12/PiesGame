@@ -54,6 +54,24 @@ function AutoBlood()
     end
 end
 
+function AutoPlant()
+    local Player = game:GetService("Players").LocalPlayer
+    for _, v in pairs(workspace.Deployables:GetChildren()) do
+        if v.Name == "Plant Box" and (Player.Character.Head.Position - v.PrimaryPart.Position).magnitude < 500 then
+            game.ReplicatedStorage.Events.InteractStructure:FireServer(v, "Bloodfruit")
+        end
+    end
+end
+
+function AutoPickup()
+local Player = game:GetService("Players").LocalPlayer
+	 for _, v in pairs(workspace:GetChildren()) do
+             if v.Name == "Bloodfruit Bush" and (Player.Character.Head.Position - v.PrimaryPart.Position).magnitude < 50 then
+            game.ReplicatedStorage.Events.Pickup:FireServer(v)
+        end
+    end
+end
+
 function AutoBerries()
     while _G.AutoBerries == true do
         if _G.AutoBerries == true then 
@@ -493,6 +511,24 @@ Visuals:AddSlider({
 	ValueName = "FogEnd",
 	Callback = function(Value)
 		game.Lighting.FogEnd  = Value
+	end    
+})
+
+KeyBinds:AddBind({
+	Name = "Auto - Pickup",
+	Default = Enum.KeyCode.E,
+	Hold = false,
+	Callback = function()
+		AutoPickup()
+	end    
+})
+
+KeyBinds:AddBind({
+	Name = "Auto - Plant",
+	Default = Enum.KeyCode.E,
+	Hold = false,
+	Callback = function()
+		AutoPlant()
 	end    
 })
 
